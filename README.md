@@ -89,3 +89,54 @@ OK
 - 单用户本地程序，没有并发控制，不适合多个人同时写
 - 没有导出 Excel/PDF 的功能（原版也没有）
 - GUI 只做了基础表单，没有做批量导入
+
+---
+
+## 测试输出
+
+本地实测（Python 3.13，Windows）：
+
+<details>
+<summary>展开：31 passed / 0 failed</summary>
+
+```
+$ python tests.py
+test_exam_weight_40_60 (__main__.TestCalcTotal.test_exam_weight_40_60) ... ok
+test_invalid_course_type (__main__.TestCalcTotal.test_invalid_course_type) ... ok
+test_rounds_to_two_decimals (__main__.TestCalcTotal.test_rounds_to_two_decimals) ... ok
+test_test_weight_60_40 (__main__.TestCalcTotal.test_test_weight_60_40) ... ok
+test_chinese_text_roundtrip (__main__.TestCascadeAndStats.test_chinese_text_roundtrip) ... ok
+test_class_rank_order (__main__.TestCascadeAndStats.test_class_rank_order) ... ok
+test_delete_missing_student_rejected (__main__.TestCascadeAndStats.test_delete_missing_student_rejected) ... ok
+test_delete_student_cascades_scores (__main__.TestCascadeAndStats.test_delete_student_cascades_scores) ... ok
+test_student_summary_total_and_average (__main__.TestCascadeAndStats.test_student_summary_total_and_average) ... ok
+test_student_summary_without_scores (__main__.TestCascadeAndStats.test_student_summary_without_scores) ... ok
+test_add_score_returns_weighted_total (__main__.TestScore.test_add_score_returns_weighted_total) ... ok
+test_delete_missing_score_rejected (__main__.TestScore.test_delete_missing_score_rejected) ... ok
+test_delete_score (__main__.TestScore.test_delete_score) ... ok
+test_duplicate_course_same_semester_rejected (__main__.TestScore.test_duplicate_course_same_semester_rejected) ... ok
+test_same_course_other_semester_allowed (__main__.TestScore.test_same_course_other_semester_allowed) ... ok
+test_score_for_missing_student_rejected (__main__.TestScore.test_score_for_missing_student_rejected) ... ok
+test_score_negative_rejected (__main__.TestScore.test_score_negative_rejected) ... ok
+test_score_non_number_rejected (__main__.TestScore.test_score_non_number_rejected) ... ok
+test_score_out_of_range_rejected (__main__.TestScore.test_score_out_of_range_rejected) ... ok
+test_score_saved (__main__.TestScore.test_score_saved) ... ok
+test_update_final_score_recalculates_total (__main__.TestScore.test_update_final_score_recalculates_total) ... ok
+test_add_and_get (__main__.TestStudent.test_add_and_get) ... ok
+test_blank_name_rejected (__main__.TestStudent.test_blank_name_rejected) ... ok
+test_blank_student_id_rejected (__main__.TestStudent.test_blank_student_id_rejected) ... ok
+test_duplicate_student_id_rejected (__main__.TestStudent.test_duplicate_student_id_rejected) ... ok
+test_search_by_class (__main__.TestStudent.test_search_by_class) ... ok
+test_search_by_name (__main__.TestStudent.test_search_by_name) ... ok
+test_search_no_match (__main__.TestStudent.test_search_no_match) ... ok
+test_update_ignores_unknown_field (__main__.TestStudent.test_update_ignores_unknown_field) ... ok
+test_update_name (__main__.TestStudent.test_update_name) ... ok
+test_update_rejects_blank_name (__main__.TestStudent.test_update_rejects_blank_name) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.013s
+
+OK
+```
+
+</details>
